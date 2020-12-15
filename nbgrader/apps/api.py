@@ -287,7 +287,7 @@ class NbGraderAPI(LoggingConfigurable):
             # newer than the autograded timestamp
             submitted_timestamp = self.get_submitted_timestamp(assignment_id, student_id)
             autograded_timestamp = ag_timestamps[student_id]
-            if submitted_timestamp != autograded_timestamp:
+            if submitted_timestamp != autograded_timestamp.replace(tzinfo=None):
                 continue
 
             students.add(student_id)
