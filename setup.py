@@ -69,8 +69,6 @@ setup_args = dict(
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
     ],
     packages=find_packages(),
     package_data={
@@ -87,13 +85,13 @@ setup_args = dict(
         'console_scripts': ['nbgrader=nbgrader.apps.nbgraderapp:main']
     },
     install_requires=[
-        "sqlalchemy",
+        "sqlalchemy>=1.4.1",
         "python-dateutil",
         "jupyter",
         "notebook>=4.2",
         "nbconvert==5.6.1",
         "nbformat",
-        "traitlets==4.3.3",
+        "traitlets==5.0.5",
         "jupyter_core",
         "jupyter_client",
         "tornado",
