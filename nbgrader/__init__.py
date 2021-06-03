@@ -59,7 +59,6 @@ def _jupyter_server_extension_paths():
 
     if sys.platform != 'win32':
         paths.append(dict(module="nbgrader.server_extensions.assignment_list"))
-        paths.append(dict(module="nbgrader.server_extensions.course_list")),
-        paths.append(dict(module="nbgrader.server_extensions.background_processor")),
+        paths.append(dict(module="nbgrader.server_extensions.course_list"))
 
     return paths
