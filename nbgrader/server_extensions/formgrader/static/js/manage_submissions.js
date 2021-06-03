@@ -149,7 +149,7 @@ var SubmissionUI = Backbone.View.extend({
             createLogModal(
                 "success-modal",
                 "Success",
-                "Successfully autograded '" + assignment + "' for student '" + student + "'.",
+                "Assignment '" + assignment + "' of student '" + student + "' queued for auto-grading, please check back after sometime.",
                 response["log"]);
 
         } else {

@@ -4,6 +4,7 @@ import os
 from tornado import web
 
 from .base import BaseApiHandler, check_xsrf, check_notebook_dir
+from ..background_processor import scheduler, autograde_assignment
 from ...api import MissingEntry
 
 
@@ -276,7 +277,8 @@ class AutogradeHandler(BaseApiHandler):
     @check_xsrf
     @check_notebook_dir
     def post(self, assignment_id, student_id):
-        self.write(json.dumps(self.api.autograde(assignment_id, student_id)))
+        scheduler.add_job(autograde_assignment, 'date', args=[None, assignment_id, student_id])
+        self.write(json.dumps({ 'success': True, 'queued': True, 'message': 'Submission Autograding queued' }))
 
 
 class GenerateAllFeedbackHandler(BaseApiHandler):

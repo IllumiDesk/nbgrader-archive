@@ -98,7 +98,8 @@ setup_args = dict(
         "requests",
         "jsonschema",
         "alembic",
-        "rapidfuzz"
+        "rapidfuzz",
+        "apscheduler==3.7.0",
     ]
 )
 

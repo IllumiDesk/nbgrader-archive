@@ -113,6 +113,7 @@ README
 .pytest_cache
 venv/
 gradebook.db
+tasks.db
 .buildconfig
 *~
 .vscode/
